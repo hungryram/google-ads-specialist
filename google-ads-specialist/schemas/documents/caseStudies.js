@@ -1,6 +1,6 @@
 export default {
-    title: 'Services',
-    name: 'services',
+    title: 'Case Studies',
+    name: 'caseStudies',
     type: 'document',
     fields: [
         {
@@ -24,9 +24,9 @@ export default {
             },
         },
         {
-            title: 'Description',
-            name: 'description',
-            type: 'text'
+            title: 'Image',
+            name: 'image',
+            type: 'image'
         },
         {
             title: 'Content',

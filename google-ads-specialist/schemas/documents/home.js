@@ -7,6 +7,11 @@ export default {
             title: 'Hero',
             name: 'hero',
             type: 'homeHero'
+        },
+        {
+            title: 'Introduction',
+            name: 'intro',
+            type: 'intro'
         }
     ]
 }

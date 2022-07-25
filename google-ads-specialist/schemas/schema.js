@@ -17,6 +17,7 @@ import menu from "./documents/navigation"
 import pages from "./documents/pages"
 import services from "./documents/services"
 import homeContent from "./documents/home"
+import caseStudies from "./documents/caseStudies"
 
 import social from "./blocks/social"
 import contact from "./blocks/contact"
@@ -29,6 +30,7 @@ import headerMenu from "./blocks/headerMenu"
 import mainColors from "./blocks/mainColors"
 
 import homeHero from "./blocks/homeHero"
+import intro from "./blocks/intro"
 
 //subblocks
 import subMenu from "./subBlocks/subMenu"
@@ -48,6 +50,7 @@ export default createSchema({
     homeContent,
     pages,
     services,
+    caseStudies,
     post,
     author,
     category,
@@ -66,6 +69,7 @@ export default createSchema({
     headerMenu,
     subMenu,
     mainColors,
-    homeHero
+    homeHero,
+    intro
   ]),
 })

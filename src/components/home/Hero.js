@@ -9,7 +9,7 @@ export default function Hero({ heading, buttonLabel, buttonLink, image }) {
             <div className="section">
                 <div className="container text-center">
                     <div className="mb-20">
-                        <h1 className="md:text-5xl text-3xl font-bold leading-snug">{heading}</h1>
+                        <h1 className="md:text-5xl text-3xl font-bold leading-loose heroHeading">{heading}</h1>
                         <div className="mt-10">
                             <Link to={buttonLink} className="primary-button">{buttonLabel}</Link>
                         </div>

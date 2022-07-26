@@ -24,6 +24,15 @@
     @apply text-3xl md:text-4xl font-bold mt-10 mb-6
 }
 
+.svg svg {
+    width: 150px;
+    stroke: #2563EB;
+}
+
+h1.heroHeading {
+    line-height: 1.5;
+}
+
 .accent {
     color: #2563EB;
 }

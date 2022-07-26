@@ -24,6 +24,12 @@ export default {
             },
         },
         {
+            title: 'SVG Icon',
+            name: 'svgIcon',
+            type: 'text',
+            description: 'Visit reshot.com and paste in the svg code you want'
+        },
+        {
             title: 'Description',
             name: 'description',
             type: 'text'

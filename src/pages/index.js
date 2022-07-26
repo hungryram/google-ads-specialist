@@ -10,6 +10,7 @@ import CaseStudyCard from "../components/home/CaseStudyCard"
 
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight"
 import Intro from "../components/home/Intro"
+import Seo from "../components/global/Seo"
 
 export default function Index({ data }) {
 
@@ -19,17 +20,73 @@ export default function Index({ data }) {
     dots: true,
     speed: 500,
     slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const caseStudiesSettings = {
     dots: true,
     speed: 500,
     slidesToShow: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
     <>
       <Layout>
+        <Seo
+          title={data.sanityProfileSettings.seo.title_tag}
+          description={data.sanityProfileSettings.seo.meta_description}
+        />
         <Hero
           heading={home.hero.heading}
           subHeading={home.hero.subHeading}
@@ -49,6 +106,7 @@ export default function Index({ data }) {
                     title={node.title}
                     link={"services/" + node.slug.current}
                     description={node.description}
+                    svg={node.svgIcon}
                   />
                 )
               })}
@@ -123,6 +181,8 @@ export const query = graphql`
         current
       }
       title
+      description
+      svgIcon
     }
   }
   allSanityCaseStudies {
@@ -136,6 +196,12 @@ export const query = graphql`
           gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.5)
         }
       }
+    }
+  }
+  sanityProfileSettings {
+    seo {
+      title_tag
+      meta_description
     }
   }
 }

@@ -11,10 +11,9 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Services', href: '/services/' },
+    { name: 'Case Studies', href: '/case-studies/' },
+    { name: 'Contact', href: '/contact/' },
   ]
 
 export default function Navbar() {

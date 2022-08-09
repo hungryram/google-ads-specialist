@@ -7,7 +7,7 @@ export default function Hero({ heading, buttonLabel, buttonLink, image, subHeadi
     return (
         <>
             <>
-                <div className="banner-image relative flex items-center -z-40">
+                <div className="banner-image relative flex items-center">
                     <GatsbyImage
                         image={image}
                         alt="Commercial building"

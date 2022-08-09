@@ -13,6 +13,7 @@ export default function SimpleSlider() {
 
         return (
             <Slider {...settings}>
+                
             </Slider>
         )
 }

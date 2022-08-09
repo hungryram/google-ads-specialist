@@ -12,6 +12,16 @@ export default {
             title: 'Introduction',
             name: 'intro',
             type: 'intro'
+        },
+        {
+            title: 'Second Introduction',
+            name: 'second',
+            type: 'secondIntro'
+        },
+                {
+            title: 'Banner',
+            name: 'banner',
+            type: 'banner'
         }
     ]
 }

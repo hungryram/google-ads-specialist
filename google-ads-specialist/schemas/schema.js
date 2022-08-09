@@ -31,6 +31,9 @@ import mainColors from "./blocks/mainColors"
 
 import homeHero from "./blocks/homeHero"
 import intro from "./blocks/intro"
+import secondIntro from "./blocks/second-intro"
+import secondIntroBlock from "./blocks/secondIntroBlock"
+import banner from "./blocks/banner"
 
 //subblocks
 import subMenu from "./subBlocks/subMenu"
@@ -70,6 +73,9 @@ export default createSchema({
     subMenu,
     mainColors,
     homeHero,
-    intro
+    intro,
+    secondIntro,
+    secondIntroBlock,
+    banner
   ]),
 })

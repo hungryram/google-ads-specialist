@@ -42,5 +42,75 @@ h1.heroHeading {
 }
 
 .primary-button {
-    @apply text-white text-xl bg-blue-600 py-3 px-5 rounded-md
+    @apply text-white bg-blue-600 py-3 px-5 rounded-md
+}
+
+div.overlay:after {
+    background: rgba(0,0,0,.15);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.banner-section {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://res.cloudinary.com/hungryram19/image/upload/v1628200056/hungryram/desktop2_igppbt.jpg');
+    background-position: top;
+}
+
+
+/* CONTENT */
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    @apply mt-4 mb-2 font-bold;
+}
+
+.content h1 {
+    @apply text-4xl;
+}
+
+.content h2 {
+    @apply text-3xl;
+}
+
+.content h3 {
+    @apply text-xl;
+}
+
+.content h4 {
+    @apply text-lg;
+}
+
+.content p {
+    @apply my-6 font-thin;
+}
+
+.content ul, .content ol {
+    @apply my-2 list-disc ml-5;
+}
+
+.content li {
+    @apply my-1;
+}
+
+/* HOME */
+
+.home-section h1 strong,
+.home-section h2 strong {
+    color: #2563EB;
+}
+
+.service-card:hover {
+    background: #2563EB;
+    color: #fff!important;
+}
+
+.service-card:hover p {
+    color: #fff;
+}
+
+.service-card p {
+    color: rgb(128, 128, 128);
 }

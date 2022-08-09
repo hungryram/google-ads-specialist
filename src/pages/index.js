@@ -11,6 +11,9 @@ import CaseStudyCard from "../components/home/CaseStudyCard"
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight"
 import Intro from "../components/home/Intro"
 import Seo from "../components/global/Seo"
+import Banner from "../components/home/Banner"
+import SecondIntro from "../components/home/secondIntro"
+import Closing from "../components/global/Closing"
 
 export default function Index({ data }) {
 
@@ -94,23 +97,35 @@ export default function Index({ data }) {
           buttonLink={home.hero.link.current}
           image={home.hero.image.asset.gatsbyImageData}
         />
+
+        <Intro
+          content={data.sanityHomeContent.intro._rawContent}
+          altTag={data.sanityHomeContent.intro.altTag}
+          image={data.sanityHomeContent.intro.image.asset.gatsbyImageData}
+        />
+
+        <SecondIntro />
+
+        <Banner
+          content={home.banner._rawContent}
+        />
+
         <div className="section">
           <div className="container">
             <div className="mb-10">
               <h2 className="h2 text-center">Our Services</h2>
             </div>
-            <Slider {...serviceSettings}>
+              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-stretch">
               {data.allSanityServices.nodes.map((node) => {
-                return (
-                  <Services
-                    title={node.title}
-                    link={"services/" + node.slug.current}
-                    description={node.description}
-                    svg={node.svgIcon}
-                  />
-                )
-              })}
-            </Slider>
+              return (
+                <Services
+                  title={node.title}
+                  link={"services/" + node.slug.current}
+                  description={node.description}
+                />
+              )
+            })}
+              </div>
           </div>
         </div>
 
@@ -139,10 +154,9 @@ export default function Index({ data }) {
             </Slider>
           </div>
         </div>
-
-        <Intro
-              content={home.intro._rawContent}
-              image={home.intro.image.asset.gatsbyImageData}
+        <Closing
+          heading="Ready to speak with a marketing expert? Give us a ring"
+          text="Harness the Full Power of AdWords with a Google AdWords Agency"
         />
       </Layout>
     </>
@@ -172,6 +186,16 @@ export const query = graphql`
         asset {
           gatsbyImageData(placeholder: BLURRED)
         }
+      }
+    }
+    banner {
+      _rawContent
+    }
+    second {
+      _rawContent
+      blocks {
+        text
+        heading
       }
     }
   }

@@ -9,25 +9,22 @@ export default function Intro({ content, image, altTag }) {
     return (
         <>
             <div className="section" style={{
-                backgroundColor: '#17191B'
+                backgroundColor: '#F9F9F9'
             }}>
                 <div className="container">
-                    <div className="md:flex items-center gap-10">
+                    <div className="md:flex gap-10 content">
                         <div className="md:w-1/2">
-                            <div className="intro-content text-white mb-10">
-                            <PortableText
-                                value={content}
-                            />
-                            <div className="my-6">
-                                <Link to="/contact/" className="underline">Learn more <BsArrowRight className="inline text-3xl" /></Link>
-                            </div>
+                            <div>
+                                <h2>Full Service Digital Marketing Company</h2>
                             </div>
                         </div>
                         <div className="md:w-1/2">
-                            <GatsbyImage
-                                image={image}
-                                alt={altTag}
+                            <PortableText
+                                value={content}
                             />
+                            <div className="my-10">
+                                <Link to="/contact/" className="primary-button">Learn more <BsArrowRight className="inline text-2xl" /></Link>
+                            </div>
                         </div>
                     </div>
                 </div>

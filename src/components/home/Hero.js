@@ -3,27 +3,25 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 
-export default function Hero({ heading, buttonLabel, buttonLink, image }) {
+export default function Hero({ heading, buttonLabel, buttonLink, image, subHeading }) {
     return (
         <>
-            <div className="section">
-                <div className="container text-center">
-                    <div className="mb-20">
-                        <h1 className="md:text-5xl text-3xl font-bold leading-loose heroHeading">{heading}</h1>
-                        <div className="mt-10">
-                            <Link to={buttonLink} className="primary-button">{buttonLabel}</Link>
+            <>
+                <div className="banner-image relative flex items-center -z-40">
+                    <GatsbyImage
+                        image={image}
+                        alt="Commercial building"
+                        className="object-cover lg:h-[40rem] w-full h-[50rem]"
+                    />
+                    <div className="overlay"></div>
+                    <div className="container absolute justify-center flex top-1/4 bottom-0 left-0 right-0 text-white text-center">
+                        <div className="md:w-3/5">
+                        <h1 className="md:text-5xl text-3xl font-medium">{heading}</h1>
+                        <p className="m-10">{subHeading}</p>
                         </div>
                     </div>
                 </div>
-                <div className="md:px-40 px-4">
-                    <div>
-                        <GatsbyImage
-                            image={image}
-                            alt=""
-                        />
-                    </div>
-                </div>
-            </div>
+            </>
         </>
     )
 }

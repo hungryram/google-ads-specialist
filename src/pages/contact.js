@@ -27,7 +27,7 @@ export default function Contact({ data }) {
 
                                         </li>
                                         <li className="mt-10">
-                                            <Link to="" className="accent">Visit my Linkedin <BsArrowRight className="inline text-3xl" /></Link>
+                                            <a href="https://www.linkedin.com/in/george-aguilar/" className="accent" target="_blank">Visit my Linkedin <BsArrowRight className="inline text-3xl" /></a>
                                         </li>
                                     </ul>
                                 </div>

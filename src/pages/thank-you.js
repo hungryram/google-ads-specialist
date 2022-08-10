@@ -1,6 +1,7 @@
 import * as React from "react"
 import Layout from "../components/global/Layout"
 import Banner from "../components/templates/Banner"
+import { Link } from "gatsby"
 
 export default function Thanks() {
     return (

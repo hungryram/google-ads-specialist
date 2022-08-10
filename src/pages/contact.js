@@ -34,7 +34,11 @@ export default function Contact({ data }) {
                             </div>
                             <div className="md:w-3/5">
                                 <div>
-                                    <ContactForm />
+                                    <ContactForm 
+                                        formName="Contact"
+                                        subject="Inquiry from Website"
+                                        source="/contact/"
+                                    />
                                 </div>
                             </div>
                         </div>

@@ -46,7 +46,7 @@ h1.heroHeading {
 }
 
 div.overlay:after {
-    background: rgba(0,0,0,.15);
+    background: rgba(0,0,0,.65);
     bottom: 0;
     content: "";
     left: 0;
@@ -59,7 +59,6 @@ div.overlay:after {
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://res.cloudinary.com/hungryram19/image/upload/v1628200056/hungryram/desktop2_igppbt.jpg');
     background-position: top;
 }
-
 
 /* CONTENT */
 

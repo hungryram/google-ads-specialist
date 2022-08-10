@@ -24,7 +24,7 @@ export default function ServicesIndex({ data }) {
                     <div className="container">
                         <div className="flex justify-center">
                             <div className="md:w-full">
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid md:grid-cols-2 gap-4">
                                     {data.allSanityServices.nodes.map((node) => {
                                         return (
                                             <>

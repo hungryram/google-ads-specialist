@@ -54,7 +54,7 @@ const Footer = () => {
                                             <h1 class="font-bold text-2xl mb-10">George<span class="accent"> Aguilar</span></h1>
                                         </Link>
                                         <div>
-                                            <p className="text-gray-400 font-thin">Ready to scale your business to the next level with digital marketing? Talk to a growth expert by filling out the form</p>
+                                            <p className="text-gray-400 font-thin">Ready to scale your business to the next level with digital marketing? Talk to a growth expert today.</p>
                                             <ul className="mt-10">
                                                 <li className="my-2">Email: <a href={`mailto:${data.sanityProfileSettings.contact_information.email}`}>{data.sanityProfileSettings.contact_information.email}</a></li>
                                                 <li className="my-2">Phone: <a href={`tel:${data.sanityProfileSettings.contact_information.phone_number}`}>{data.sanityProfileSettings.contact_information.phone_number}</a></li>

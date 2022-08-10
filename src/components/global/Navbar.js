@@ -111,11 +111,7 @@ export default function Navbar() {
           >
             <div className="flex-1">
               <Link to="/">
-                {data.sanityAppearances.branding.logo?.asset.url ?
-                  <img src={data.sanityAppearances.branding.logo.asset.url} width={data.sanityAppearances.branding.logoWidth} alt={data.sanityProfileSettings?.company_name} />
-                  :
-                  <h2 className="text-2xl">{data.sanityProfileSettings?.company_name}</h2>
-                }
+                <h1 class="font-bold text-2xl">George<span class="accent"> Aguilar</span></h1>
               </Link>
             </div>
             <ul className="flex-2 items-center text-right">
@@ -156,8 +152,8 @@ export default function Navbar() {
                 }
                 else {
                   return (
-                    <li 
-                    className="mx-6 font-medium hover:text-sky-600 transition-all ease-linear inline-block"
+                    <li
+                      className="mx-6 font-medium hover:text-sky-600 transition-all ease-linear inline-block"
                     >
                       <Link
                         to={(link.internalLink?._type === "post" && `/blog/${link.internalLink.slug.current}`) || (link.internalLink?._type === "legal" && `/legal/${link.internalLink.slug.current}`) || (link.internalLink?._type === "author" && `/authors/${link.internalLink.slug.current}`) || (link.externalUrl && `${link.externalUrl}`)}
@@ -181,13 +177,9 @@ export default function Navbar() {
             <div className="nav p-4">
               <div className="flex items-center">
                 <div className="flex-1">
-                  <Link to="/">
-                    {data.sanityAppearances.branding.logo?.asset.url ?
-                      <img src={data.sanityAppearances.branding.logo.asset.url} width={data.sanityAppearances.branding.logoWidth} alt={data.sanityProfileSettings?.company_name} />
-                      :
-                      <h2 className="text-2xl">{data.sanityProfileSettings?.company_name}</h2>
-                    }
-                  </Link>
+                <Link to="/">
+                <h1 class="font-bold text-2xl">George<span class="accent"> Aguilar</span></h1>
+              </Link>
                 </div>
                 <div className="flex-1 text-right">
                   <div id="toggle" className="cursor-pointer flex justify-end" onClick={openMobileNav ? () => setOpenMobileNav(false) : () => setOpenMobileNav(true)}>
@@ -250,7 +242,7 @@ export default function Navbar() {
                     else {
                       return (
                         <li
-                        className="mx-2 block border-b py-4"
+                          className="mx-2 block border-b py-4"
                         >
                           <Link
                             onClick={() => setOpenMobileNav(false)}
@@ -268,7 +260,7 @@ export default function Navbar() {
                   <li
                     className="mx-2 my-1 block mt-10"
                   >
-                <Link to="/contact/" className="primary-button uppercase">Free marketing plan</Link>
+                    <Link to="/contact/" className="primary-button uppercase">Free marketing plan</Link>
 
                   </li>
                 </ul>

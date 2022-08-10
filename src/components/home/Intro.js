@@ -15,7 +15,7 @@ export default function Intro({ content, image, altTag }) {
                     <div className="md:flex gap-10 content">
                         <div className="md:w-1/2">
                             <div>
-                                <h2>Full Service Digital Marketing Company</h2>
+                                <h2>Make your paid search marketing campaigns a <span className="accent">success</span></h2>
                             </div>
                         </div>
                         <div className="md:w-1/2">

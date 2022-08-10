@@ -129,31 +129,6 @@ export default function Index({ data }) {
           </div>
         </div>
 
-        <div className="section">
-          <div className="container">
-            <div className="mb-20">
-              <div className="md:flex">
-                <div className="md:w-1/2">
-                  <h2 className="h2">Case Studies</h2>
-                </div>
-                <div className="md:w-1/2 md:text-right">
-                  <Link to="/case-studies/" className="accent">View all Case Study <BsArrowRight className="inline text-3xl" /></Link>
-                </div>
-              </div>
-            </div>
-            <Slider {...caseStudiesSettings}>
-              {data.allSanityCaseStudies.nodes.map((node) => {
-                return (
-                  <CaseStudyCard
-                    title={node.title}
-                    link={"case-studies/" + node.slug.current}
-                    image={node.image.asset.gatsbyImageData}
-                  />
-                )
-              })}
-            </Slider>
-          </div>
-        </div>
         <Closing
           heading="Ready to speak with a marketing expert? Give us a ring"
           text="Harness the Full Power of AdWords with a Google AdWords Agency"
@@ -206,7 +181,6 @@ export const query = graphql`
       }
       title
       description
-      svgIcon
     }
   }
   allSanityCaseStudies {

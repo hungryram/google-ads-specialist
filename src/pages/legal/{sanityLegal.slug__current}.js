@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import * as React from "react"
 import Layout from "../../components/global/Layout"
 import Seo from "../../components/global/Seo"
+import Banner from "../../components/templates/Banner"
 
 export default function Legal({ data }) {
     const sanity = data.sanityLegal
@@ -12,6 +13,11 @@ export default function Legal({ data }) {
             <Seo
                 title={sanity.seo.title_tag}
                 description={sanity.seo.meta_description}
+            />
+            <Banner
+             heading={sanity.title}
+             link="/contact"
+             label="Get in touch"
             />
             <div className="section">
                 <div className="container content">

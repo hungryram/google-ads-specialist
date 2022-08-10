@@ -8,8 +8,8 @@ import { BiCaretDown } from "@react-icons/all-files/bi/BiCaretDown"
 
 export default function Navbar() {
 
-  const [ dropdownActive, setDropdownActive ] = useState(null);
-  const [ openMobileNav, setOpenMobileNav ] = useState(false)
+  const [dropdownActive, setDropdownActive] = useState(null);
+  const [openMobileNav, setOpenMobileNav] = useState(false)
 
   return (
     <StaticQuery
@@ -104,8 +104,8 @@ export default function Navbar() {
       }
       render={data => (
         <>
-          <nav 
-            className="md:flex items-center justify-center py-5 md:px-10 md:visible hidden" 
+          <nav
+            className="md:flex items-center justify-center py-5 md:visible hidden container px-0"
             style={{ borderBottom: '1px solid #eee' }}
             onMouseLeave={() => setDropdownActive(null)}
           >
@@ -123,42 +123,43 @@ export default function Navbar() {
                 if (link.submenuChild.length > 0) {
                   return (
                     <>
-                      <li className="relative inline-block m-2" 
-                      onMouseEnter={dropdownActive === link ? () => setDropdownActive(null) : () => setDropdownActive(link)}>
+                      <li className="relative inline-block m-2"
+                        onMouseEnter={dropdownActive === link ? () => setDropdownActive(null) : () => setDropdownActive(link)}>
                         <Link
                           aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
                           target={link?.externalUrl && "_blank"}
                           key={i}
-                          className="cursor-pointer flex flex-row items-center"               
+                          className="cursor-pointer flex flex-row items-center"
                         >
                           {link.internalLink?.name ?? link.internalLink?.title ?? link.text} <BiCaretDown className={`ml-1 text-lg ${dropdownActive === link ? "rotate-180" : "rotate-0"}`} />
                         </Link>
 
-                          <ul className={`absolute bottom-0 left-0 translate-y-full bg-white p-2 border text-left w-fit ${dropdownActive === link ? "visible" : "hidden"}`}>
-                            {link.submenuChild.map((sub) => {
-                              return (
-                                <>
-                                  <li className="whitespace-nowrap">
-                                    <Link
-                                      onClick={() => setDropdownActive(null)}
-                                      to={(sub.internalLink?._type === "post" && `/blog/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "legal" && `/legal/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "author" && `/authors/${sub.internalLink.slug.current}`) || (sub.externalUrl && `${sub.externalUrl}`)}
-                                      aria-label={sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}
-                                      target={sub?.externalUrl && "_blank"}
-                                    >{sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}</Link>
-                                  </li>
-                                </>
-                              )
-                            })}
-                          </ul>
+                        <ul className={`absolute bottom-0 left-0 translate-y-full bg-white p-2 border text-left w-fit ${dropdownActive === link ? "visible" : "hidden"}`}>
+                          {link.submenuChild.map((sub) => {
+                            return (
+                              <>
+                                <li className="whitespace-nowrap">
+                                  <Link
+                                    onClick={() => setDropdownActive(null)}
+                                    to={(sub.internalLink?._type === "post" && `/blog/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "legal" && `/legal/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "author" && `/authors/${sub.internalLink.slug.current}`) || (sub.externalUrl && `${sub.externalUrl}`)}
+                                    aria-label={sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}
+                                    target={sub?.externalUrl && "_blank"}
+                                  >{sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}</Link>
+                                </li>
+                              </>
+                            )
+                          })}
+                        </ul>
                       </li>
                     </>
                   )
                 }
                 else {
                   return (
-                    <>
+                    <li 
+                    className="mx-6 font-medium hover:text-sky-600 transition-all ease-linear inline-block"
+                    >
                       <Link
-                        className="mx-2 inline-block"
                         to={(link.internalLink?._type === "post" && `/blog/${link.internalLink.slug.current}`) || (link.internalLink?._type === "legal" && `/legal/${link.internalLink.slug.current}`) || (link.internalLink?._type === "author" && `/authors/${link.internalLink.slug.current}`) || (link.externalUrl && `${link.externalUrl}`)}
                         aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
                         target={link?.externalUrl && "_blank"}
@@ -166,10 +167,13 @@ export default function Navbar() {
                         {link.internalLink?.name ?? link.internalLink?.title ?? link.text}
 
                       </Link>
-                    </>
+                    </li>
                   )
                 }
               })}
+              <li className="mx-2 inline-block">
+                <Link to="/contact/" className="primary-button uppercase">Free marketing plan</Link>
+              </li>
             </ul>
           </nav>
 
@@ -178,11 +182,11 @@ export default function Navbar() {
               <div className="flex items-center">
                 <div className="flex-1">
                   <Link to="/">
-                  {data.sanityAppearances.branding.logo?.asset.url ?
-                  <img src={data.sanityAppearances.branding.logo.asset.url} width={data.sanityAppearances.branding.logoWidth} alt={data.sanityProfileSettings?.company_name} />
-                  :
-                  <h2 className="text-2xl">{data.sanityProfileSettings?.company_name}</h2>
-                }
+                    {data.sanityAppearances.branding.logo?.asset.url ?
+                      <img src={data.sanityAppearances.branding.logo.asset.url} width={data.sanityAppearances.branding.logoWidth} alt={data.sanityProfileSettings?.company_name} />
+                      :
+                      <h2 className="text-2xl">{data.sanityProfileSettings?.company_name}</h2>
+                    }
                   </Link>
                 </div>
                 <div className="flex-1 text-right">
@@ -207,59 +211,66 @@ export default function Navbar() {
             </div>
             <div>
               <div className={`absolute bg-white w-full py-4 ${openMobileNav ? "visible" : "hidden"}`}>
-                <ul style={{ listStyle: "none", padding: "0" }} className="mt-5 flex flex-col">
-                {data.sanityAppearances.header?.mainNav.items.map((link, i) => {
-                if (link.submenuChild.length > 0) {
-                  return (
-                    <>
-                      <li className="relative inline-block mx-2 my-1" onClick={dropdownActive === link ? () => setDropdownActive(null) : () => setDropdownActive(link)}>
-                        <Link
-                          aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
-                          target={link?.externalUrl && "_blank"}
-                          key={i}
-                          className="cursor-pointer flex flex-row items-center"
-                          onClick={() => setOpenMobileNav(false)}
+                <ul style={{ listStyle: "none", padding: "0" }} className="mt-5 flex flex-col text-center">
+                  {data.sanityAppearances.header?.mainNav.items.map((link, i) => {
+                    if (link.submenuChild.length > 0) {
+                      return (
+                        <>
+                          <li className="relative inline-block mx-2 my-1" onClick={dropdownActive === link ? () => setDropdownActive(null) : () => setDropdownActive(link)}>
+                            <Link
+                              aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
+                              target={link?.externalUrl && "_blank"}
+                              key={i}
+                              className="cursor-pointer flex flex-row items-center"
+                              onClick={() => setOpenMobileNav(false)}
+                            >
+                              {link.internalLink?.name ?? link.internalLink?.title ?? link.text} <BiCaretDown className={`ml-1 text-lg ${dropdownActive === link ? "rotate-180" : "rotate-0"}`} />
+                            </Link>
+
+                            <ul className={`relative w-full bg-white p-2 border text-left w-fit ${dropdownActive === link ? "visible" : "hidden"}`}>
+                              {link.submenuChild.map((sub) => {
+                                return (
+                                  <>
+                                    <li className="block mx-2 my-1">
+                                      <Link
+                                        onClick={() => setOpenMobileNav(false)}
+                                        to={(sub.internalLink?._type === "post" && `/blog/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "legal" && `/legal/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "author" && `/authors/${sub.internalLink.slug.current}`) || (sub.externalUrl && `${sub.externalUrl}`)}
+                                        aria-label={sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}
+                                        target={sub?.externalUrl && "_blank"}
+                                      >{sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}</Link>
+                                    </li>
+                                  </>
+                                )
+                              })}
+                            </ul>
+                          </li>
+                        </>
+                      )
+                    }
+                    else {
+                      return (
+                        <li
+                        className="mx-2 block border-b py-4"
                         >
-                          {link.internalLink?.name ?? link.internalLink?.title ?? link.text} <BiCaretDown className={`ml-1 text-lg ${dropdownActive === link ? "rotate-180" : "rotate-0"}`} />
-                        </Link>
+                          <Link
+                            onClick={() => setOpenMobileNav(false)}
+                            to={(link.internalLink?._type === "post" && `/blog/${link.internalLink.slug.current}`) || (link.internalLink?._type === "legal" && `/legal/${link.internalLink.slug.current}`) || (link.internalLink?._type === "author" && `/authors/${link.internalLink.slug.current}`) || (link.externalUrl && `${link.externalUrl}`)}
+                            aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
+                            target={link?.externalUrl && "_blank"}
+                          >
+                            {link.internalLink?.name ?? link.internalLink?.title ?? link.text}
 
-                          <ul className={`relative w-full bg-white p-2 border text-left w-fit ${dropdownActive === link ? "visible" : "hidden"}`}>
-                            {link.submenuChild.map((sub) => {
-                              return (
-                                <>
-                                  <li className="block mx-2 my-1">
-                                    <Link
-                                    onClick={() => setOpenMobileNav(false)}
-                                      to={(sub.internalLink?._type === "post" && `/blog/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "legal" && `/legal/${sub.internalLink.slug.current}`) || (sub.internalLink?._type === "author" && `/authors/${sub.internalLink.slug.current}`) || (sub.externalUrl && `${sub.externalUrl}`)}
-                                      aria-label={sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}
-                                      target={sub?.externalUrl && "_blank"}
-                                    >{sub.internalLink?.name ?? sub.internalLink?.title ?? sub.text}</Link>
-                                  </li>
-                                </>
-                              )
-                            })}
-                          </ul>
-                      </li>
-                    </>
-                  )
-                }
-                else {
-                  return (
-                    <>
-                      <Link
-                      onClick={() => setOpenMobileNav(false)}
-                        className="mx-2 my-1 block"
-                        to={(link.internalLink?._type === "post" && `/blog/${link.internalLink.slug.current}`) || (link.internalLink?._type === "legal" && `/legal/${link.internalLink.slug.current}`) || (link.internalLink?._type === "author" && `/authors/${link.internalLink.slug.current}`) || (link.externalUrl && `${link.externalUrl}`)}
-                        aria-label={link.internalLink?.name ?? link.internalLink?.title ?? link.text}
-                        target={link?.externalUrl && "_blank"}
-                      >
-                        {link.internalLink?.name ?? link.internalLink?.title ?? link.text}
+                          </Link>
+                        </li>
+                      )
+                    }
+                  })}
+                  <li
+                    className="mx-2 my-1 block mt-10"
+                  >
+                <Link to="/contact/" className="primary-button uppercase">Free marketing plan</Link>
 
-                      </Link>
-                    </>
-                  )
-                }
-              })}
+                  </li>
                 </ul>
               </div>
             </div>

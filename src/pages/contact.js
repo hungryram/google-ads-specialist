@@ -13,25 +13,30 @@ export default function Contact({ data }) {
             <Layout>
                 <div className="section">
                     <div className="container">
-                        <div className="md:w-3/5">
-                        <h1 className="h1">Ready to get started?</h1>
-                        <div className="my-10">
-                            <ul>
-                                <li className="my-4 text-lg font-bold">
-                                    <a href={`mailto: ${profile.email}`}>{profile.email}</a>
-                                </li>
-                                <li>
-                                    <a href={`tel: ${profile.phone_number}`}>{profile.phone_number}</a>
+                        <div className="md:flex">
+                            <div className="md:w-2/5">
+                                <h2 className="h1 mb-10">Ready to get <strong className="accent">started</strong>?</h2>
+                                <p>Ready to scale your business to the next level with digital marketing? Talk to a growth expert by filling out the form</p>
+                                <div className="my-10">
+                                    <ul>
+                                        <li className="my-4 text-lg font-bold">
+                                            <a href={`mailto: ${profile.email}`}>{profile.email}</a>
+                                        </li>
+                                        <li>
+                                            <a href={`tel: ${profile.phone_number}`}>{profile.phone_number}</a>
 
-                                </li>
-                                <li className="mt-10">
-                                <Link to="" className="accent">Visit my Linkedin <BsArrowRight className="inline text-3xl" /></Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ContactForm />
-                        </div>
+                                        </li>
+                                        <li className="mt-10">
+                                            <Link to="" className="accent">Visit my Linkedin <BsArrowRight className="inline text-3xl" /></Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="md:w-3/5">
+                                <div>
+                                    <ContactForm />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

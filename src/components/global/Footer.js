@@ -48,14 +48,14 @@ const Footer = () => {
                     }}>
                         <div className="section">
                             <div className="container">
-                                <div className="md:flex flex-none gap-10 text-white">
+                                <div className="md:flex flex-none gap-20 text-white">
                                     <div className="md:w-3/5">
                                         <Link to="/">
-                                            <h1 class="font-bold text-2xl">George<span class="accent"> Aguilar</span></h1>
+                                            <h1 class="font-bold text-2xl mb-10">George<span class="accent"> Aguilar</span></h1>
                                         </Link>
                                         <div>
-                                            <p className="text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                            <ul>
+                                            <p className="text-gray-400 font-thin">Ready to scale your business to the next level with digital marketing? Talk to a growth expert by filling out the form</p>
+                                            <ul className="mt-10">
                                                 <li className="my-2">Email: <a href={`mailto:${data.sanityProfileSettings.contact_information.email}`}>{data.sanityProfileSettings.contact_information.email}</a></li>
                                                 <li className="my-2">Phone: <a href={`tel:${data.sanityProfileSettings.contact_information.phone_number}`}>{data.sanityProfileSettings.contact_information.phone_number}</a></li>
                                             </ul>
@@ -66,7 +66,7 @@ const Footer = () => {
                                         <ul className="text-gray-400 columns-2">
                                             {data.allSanityServices.nodes.map((node) => {
                                                 return (
-                                                    <li className="mb-4"><Link to={node.slug.current}>{node.title}</Link></li>
+                                                    <li className="mb-4 font-thin"><Link to={"/services/" + node.slug.current}>{node.title}</Link></li>
                                                 )
                                             })}
                                         </ul>

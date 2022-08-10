@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 
 export default function Closing({ heading, text }) {
     return (
@@ -11,6 +12,9 @@ export default function Closing({ heading, text }) {
                         <div className="md:w-1/2 content">
                             {heading && <h2>{heading}</h2>}
                             {text && <p>{text}</p>}
+                            <div className="mt-10">
+                                <Link to="/contact/" className="primary-button">Free consultation</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

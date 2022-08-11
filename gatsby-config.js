@@ -9,6 +9,17 @@ module.exports = {
       "projectId": "9od8f3bu",
       "dataset": "production"
     }
+  },
+  {
+    resolve: "gatsby-plugin-google-gtag",
+    options: {
+      trackingIds: [
+        "UA-237226153-1",
+      ],
+      pluginConfig: {
+        head: true
+      },
+    }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-postcss", {
     resolve: 'gatsby-plugin-manifest',
     options: {

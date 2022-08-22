@@ -22,6 +22,8 @@ export default function ContactForm({ formName, subject, source }) {
                                             autoComplete="given-name"
                                             className="mt-5 w-full border bg-transparent p-2 border-slate-300"
                                             placeholder="Full Name"
+                                            required
+                                            aria-required
                                         />
                                     </div>
 
@@ -36,6 +38,8 @@ export default function ContactForm({ formName, subject, source }) {
                                             autoComplete="email"
                                             className="mt-5 w-full border bg-transparent p-2 border-slate-300"
                                             placeholder="Email"
+                                            required
+                                            aria-required
                                         />
                                     </div>
                                 </div>
@@ -49,12 +53,14 @@ export default function ContactForm({ formName, subject, source }) {
                                     autoComplete="tel"
                                     className="mt-5 w-full border bg-transparent p-2 border-slate-300"
                                     placeholder="Phone"
+                                    required
+                                    aria-required
                                 />
                             </div>
                             <div>
                                 <textarea
                                     id="about"
-                                    name="about"
+                                    name="message"
                                     rows={4}
                                     className="mt-5 w-full border bg-transparent p-2 border-slate-300"
                                     placeholder="Message"

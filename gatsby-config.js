@@ -15,6 +15,7 @@ module.exports = {
     options: {
       trackingIds: [
         "UA-237226153-1",
+        "G-0N12H7T8Y4"
       ],
       pluginConfig: {
         head: true

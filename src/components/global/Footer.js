@@ -94,6 +94,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+                    <div dangerouslySetInnerHTML={{ __html: `<script> gtag('config', 'AW-10967299290/CWC7CJuIxtwDENrpzu0o', { 'phone_conversion_number': '(951) 481-9612' }); </script>` }}/>
                 </>
             )}
         />
